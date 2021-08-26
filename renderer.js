@@ -27,7 +27,9 @@ function redirectOutput(x) {
 
     for (let l of lines) {
       if (l !== "") {
-        console.log(strip(l));
+        var child = document.createElement('p');
+        child.innerHTML = strip(l);
+        document.getElementById('serverLog').appendChild(child);
       }
     }
 
