@@ -37,6 +37,10 @@ function redirectOutput(x) {
   });
 }
 
+node.on('error', (err) => {
+  console.log("\n\t\tERROR: spawn failed! (" + err + ")");
+  node.kill('SIGHUP');
+});
 
 redirectOutput(node.stdout);
 redirectOutput(node.stderr);
