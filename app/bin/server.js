@@ -133,6 +133,7 @@ function serverAt (options) {
 
 const server = serverAt({
   port: 5527,
-  ipWhitelist: []
+  ipWhitelist: [],
+  pidfile: "mb.pid"
 });
 server.restart()
